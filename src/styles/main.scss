@@ -1,0 +1,129 @@
+@import "./utils/reset";
+@import "./utils/mixins";
+
+h1 {
+  font-weight: 700;
+  font-size: 32px;
+  color: #fff;
+}
+
+.page {
+  font-family: Arial, Helvetica, sans-serif;
+
+  &__header {
+    display: sticky;
+    top: 0;
+  }
+
+  &__body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  &__main {
+    flex-grow: 1;
+  }
+}
+
+.header {
+  &__block {
+    background-color: tomato;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.main {
+  &__container {
+    margin: 0 auto;
+    max-width: 1920px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px;
+
+    @include onTablet {
+      gap: 40px;
+      padding: 40px 20px;
+    }
+
+    @include onDesktop {
+      padding: 40px 60px;
+    }
+  }
+}
+
+.images {
+  &__block {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 10px;
+    justify-content: space-between;
+    place-items: center;
+    margin-bottom: 40px;
+
+    @include onTablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include onDesktop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__box {
+    width: 200px;
+
+    @include onTablet {
+      width: 250px;
+    }
+
+    @include onDesktopHD {
+      width: 400px;
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.items {
+  width: 100%;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__item {
+    background-color: #95a6a6;
+    padding: 10px 20px;
+  }
+
+  &__link {
+    font-size: 12px;
+    color: #fff;
+
+    @include onTablet {
+      font-size: 18px;
+    }
+  }
+}
+
+.footer {
+  &__block {
+    background-color: tomato;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
